@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{/* Estilos para el menú de navegación */
+            display: flex; /* Usar flexbox para el diseño */
+            justify-content: space-between; /* Espacio entre los elementos */
+            background-color: palevioletred;/* Color de fondo del menú */
+            align-items: center; /* Centrar verticalmente los elementos */
+            padding: 10px; /* Espaciado interno */
+        }
+        nav h1{/* Estilos para el título del menú */
+            color: rgb(243, 242, 242);/* Color del texto */
+            padding-left: 15px;/* Espaciado a la izquierda */
+        }
+        .nav-list{ /* Estilos para la lista de navegación */
+            display: flex;/* Usar flexbox para los elementos de la lista */
+            flex-direction: row;/* Dirección de los elementos en fila */
+            list-style-type: none;/* Quitar los puntos de la lista */
+            gap: 20px ;/* Espacio entre los elementos de la lista */
+            padding-right: 2px;/* Espaciado a la derecha */
+
+        }
+        .nav-list a{/* Estilos para los enlaces de navegación */
+            text-decoration: none;/* Quitar el subrayado de los enlaces */
+            color: rgb(243, 242, 242);
+            font-size: 25px;/* Tamaño de fuente */
+            background-color: palevioletred; /* Color de fondo de los enlaces */
+            padding: 10px 15px;/* Espaciado interno de los enlaces */
+        }
+        .nav-list a:hover{/* Estilos para los enlaces al pasar el ratón */
+            background-color: rgb(184, 55, 156);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1> <EM>Coffee</EM> </h1>
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
