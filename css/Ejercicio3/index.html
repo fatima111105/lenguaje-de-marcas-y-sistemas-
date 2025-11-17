@@ -5,37 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    nav { /* Estilos para el menú de navegación */
-      display: flex; /* Usar flexbox para el diseño */
-      justify-content: space-between; /* Espacio entre los elementos */
-      background-color: palevioletred; /* Color de fondo del menú */
-      align-items: center; /* Centrar verticalmente los elementos */
-      padding: 10px; /* Espaciado interno */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      background-color: rgb(255, 1, 179);
+      align-items: center;
+      padding: 1px;
     }
 
-    nav h1 { /* Estilos para el título del menú */
-      color: rgb(243, 242, 242); /* Color del texto */
-      padding-left: 15px; /* Espaciado a la izquierda */
-    }
-
-    .nav-list { /* Estilos para la lista de navegación */
-      display: flex; /* Usar flexbox para los elementos de la lista */
-      flex-direction: row; /* Dirección de los elementos en fila */
-      list-style-type: none; /* Quitar los puntos de la lista */
-      gap: 20px; /* Espacio entre los elementos de la lista */
-      padding-right: 2px; /* Espaciado a la derecha */
-    }
-
-    .nav-list a { /* Estilos para los enlaces de navegación */
-      text-decoration: none; /* Quitar el subrayado de los enlaces */
+    nav h1 {
       color: rgb(243, 242, 242);
-      font-size: 25px; /* Tamaño de fuente */
-      background-color: palevioletred; /* Color de fondo de los enlaces */
-      padding: 10px 15px; /* Espaciado interno de los enlaces */
+      padding-left: 15px;
     }
 
-    .nav-list a:hover { /* Estilos para los enlaces al pasar el ratón */
-      background-color: rgb(184, 55, 156);
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      gap: 20px;
+      padding-right: 2px;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      background-color: rgb(255, 1, 179);
+      padding: 10px 15px;
+    }
+
+    .nav-list a:hover {
+      background-color: #f06eaf;
     }
 
     .cta-container {
@@ -43,47 +43,37 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 400px; /* puedes ajustar la altura */
-      background-image: url(''); /* reemplaza con tu imagen */
-      background-size: cover;       /* la imagen cubre todo el contenedor */
-      background-position: center;  /* centrada vertical y horizontalmente */
-      background-repeat: no-repeat; /* evita que se repita */
+      height: 550px;
+      background-image: url('/IMÁGENES/rosa.jpg'); /* ejemplo */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       text-align: center;
-      color: #fff; /* texto en blanco para contraste */ 
+      color: #fff;
     }
 
     .cta-text {
       font-size: 28px;
       font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .cta-text + .cta-text {
-      font-size: 18px;
-      font-weight: normal;
+      margin: 10px 0 20px;
+      color: #fffefe;
     }
 
     .cta-button {
-      background-color: #626bb2;
-      color: #fff;
-      padding: 15px 30px;
+      background-color:  rgb(255, 1, 179);
+      color: rgb(250, 248, 248);
       border: none;
-      border-radius: 8px;
-      font-size: 20px;
-      text-transform: uppercase;
+      padding: 15px 30px;
+      font-size: 16px;
       cursor: pointer;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #4e5590; /* tono más oscuro al pasar el ratón */
+      border-radius: 5px;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
   <nav>
-    <h1><em>Coffee</em></h1>
+    <h1> <em>Coffee</em></h1>
     <ul class="nav-list">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
