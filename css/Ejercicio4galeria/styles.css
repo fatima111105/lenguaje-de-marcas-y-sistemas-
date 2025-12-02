@@ -9,7 +9,7 @@
     padding: 10px 0 30px;
 }
 #gallery-section .gallery-list{
-    display: flex;
+    display: flex;/
     flex-wrap: wrap;
     justify-content: center;
     gap: 32px;
