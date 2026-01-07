@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    box-sizing: border-box;/* border-box hace que el padding y el border se incluyan en las dimensiones totales del elemento */
+}
+.grid-item{/* Elementos de la cuadrícula */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-size: center;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.grid-container{/* Contenedor de la cuadrícula */
+    display: grid;/* Activar el modelo de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: 200px 200px 200px;
+    grid-auto-rows: minmax(200px,auto );
+    gap: 20px;
+    
+    
+}
+@media (max-width: 600px) {/* Media query para pantallas pequeñas */
+
+    .wide {
+    grid-column: span 2; /* Este elemento ocupará dos columnas */
+}
+.tall {
+    grid-row: span 2; /* Este elemento ocupará dos filas */
+}   
+
+}
+.wide {
+    grid-column: span 2; /* Este elemento ocupará dos columnas */
+}
+.tall {
+    grid-row: span 2; /* Este elemento ocupará dos filas */
+}   
+

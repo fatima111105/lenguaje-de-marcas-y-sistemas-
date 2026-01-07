@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));/* Columnas automáticas con un tamaño mínimo de 300px */
+    grid-template-rows: 300px 300px 300px;/* Tres filas de igual tamaño */
+    gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+    margin-top: 20px;
+    
+}
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: solid 1px #000;
+    background-color: rgb(121, 156, 107);
+    border-radius: 10px;
+    transition: transform 0.3s, ;/* Transición suave para el efecto de zoom */
+}
+.grid-item:hover {
+    transform: scale(1.03); /* Efecto de zoom al pasar el cursor */
+}
+.wide {
+    grid-column: span 2; /* Este elemento ocupará dos columnas */
+}
+.tall {
+    grid-row: span 2; /* Este elemento ocupará dos filas */
+}   
