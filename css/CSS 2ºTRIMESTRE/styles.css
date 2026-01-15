@@ -2,6 +2,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: Arial, sans-serif;
+    color: #343a40;
+}
 nav {
     background-color: #f8f9fa;
     padding: 25px 10px;
@@ -16,10 +20,36 @@ nav .logo {
 nav ul {
     list-style: none;
     display: flex;
+    gap: 30px;
     
 }
-
-
+/************************************************************************************************/
+/*me falta que los colores sean fijos para cada enlace*/
+nav ul li a{
+    font-size: 1.2em;
+    padding: 25px 10px;
+    text-decoration: none;
+    color: #343a40;
+    border: 3px solid transparent;
+    
+}
+nav ul li a.nav-link-home:hover{
+    border-bottom-color: #007bff;
+    font-weight: bold;
+}
+nav ul li a.nav-link-about:hover{
+    border-bottom-color: #32cd32;
+    font-weight: bold;
+}
+nav ul li a.nav-link-services:hover{
+    border-bottom-color: #8a2be2;
+    font-weight: bold;
+}
+nav ul li a.nav-link-contact:hover{
+    border-bottom-color: #ffd747;
+    font-weight: bold;
+}
+/************************************************************************************************/
 .cta-container {
    background-color: #e9ecef;
    padding: 110px 0;
@@ -30,20 +60,111 @@ nav ul {
     margin-bottom: 20px; 
 }
 .cta-container p {
-    max-width: 550px;/* Ancho máximo para el párrafo */
+    max-width: 550px;
     font-size: 1.2em;
     font-weight: bold;
     margin: 0 auto; 
 }
-.services-container{    
+/************************************************************************************************/
+
+.services-container{   
+    background-color: #f1f3f5; 
     display: flex;
     justify-content: center;
     padding: 34px 0;
     text-align: center;
+    
 }
 .services-container .emoticono {
     font-size: 2em;
     margin-bottom: 15px;
+    text-align: center;
+}
+.services-container div { 
+    width: 30%;
+    text-align: center; 
+    display: flex;           
+    flex-direction: column;  
+    align-items: center;     
+}
+
+
+
+.contact-container {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+
+.contact-form {
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background-color: #f1f3f5;
+    border: none;
+    border-bottom: 3px solid;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+/************************************************************************************************/
+/* Hover general */
+.contact-form input:hover,
+.contact-form textarea:hover {
+    border-bottom-color: #007bff;
+}
+
+/* Bordes específicos */
+.contact-form input[name="name"] {
+    border-bottom-color: #32cd32;
+}
+
+.contact-form input[name="email"] {
+    border-bottom-color: #8a2be2;
+}
+
+.contact-form textarea {
+    border-bottom-color: #ffd747;
+}
+
+/* Botón */
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #343a40;
+}
+
+
+
+
+
+
+
+footer {
+    background-color: #f1f3f5;
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer small {
+    font-weight: bold;
+}
+
+footer a {
+    font-size: 2em;
+    text-decoration: none;
 }
 
 
