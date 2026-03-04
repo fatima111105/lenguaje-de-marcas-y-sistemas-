@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Juego de adivinar el número</h1>
+    <p>Estoy pensando en un número entre 1 y 10. ¿Puedes adivinarlo?</p>
+    <input type="number" id="guess" placeholder="Ingresa tu adivinanza">
+    <button id="submit">Adivinar</button>
+
+    <script >
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        const submitButton = document.getElementById('submit');
+        const guessInput = document.getElementById('guess');
+        const resultMessage = document.createElement('p');
+        var intentos = 0;
+
+        submitButton.addEventListener('click', function() {  
+            const userGuess = parseInt(guessInput.value);
+            intentos++;
+            if (userGuess === randomNumber) {
+                resultMessage.textContent = "¡Felicidades! Adivinaste el número en " + intentos + " intentos.";
+            } else if (userGuess < randomNumber) {
+                resultMessage.textContent = "El número es mayor. Llevas " + intentos + " intentos.";
+            } else if (userGuess > randomNumber) {
+                resultMessage.textContent = "El número es menor. Llevas " + intentos + " intentos.";
+            }
+            document.body.appendChild(resultMessage);
+        });
+    </script>
+</body>
+</html>

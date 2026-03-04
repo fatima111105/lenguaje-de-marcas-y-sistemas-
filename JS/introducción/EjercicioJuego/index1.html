@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adivina el numero</h1>
+    <input id ="entrada"type="text">
+    <button id="boton">Adivina</button>
+    <p id="mensaje"></p>
+    <script>
+        const numeroSecreto= Math.floor(Math.random()*10)+1;
+        const botonAdivinar=document.getElementById("button");
+        const entrada=document.getElementById("entrada");
+        botonAdivinar.addEventListener("mensaje").textContent="Intenta adivinar el numero entre 1 y 10";
+        function botonAdivinar(){
+            if(entrada===numeroSecreto){
+                document.getElementById("mensaje").textContent="¡Felicidades! Adivinaste el numero.";
+            }else if (entrada> numeroSecreto){
+                document.getElementById("mensaje").textContent="Intenta de nuevo.";
+                document.getElementById("mensaje").textContent="El numero secreto es menor";
+            }else if (entrada<numeroSecreto){
+                document.getElementById("mensaje").textContent="Intenta de nuevo.";
+                document.getElementById("mensaje").textContent="El numero secreto es mayor";
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
