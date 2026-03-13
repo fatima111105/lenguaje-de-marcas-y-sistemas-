@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Lista de tareas</h2>
+
+    <input type="text" id="tareaInput" placeholder="Nueva tarea">
+    <button id="agregarBtn">Agregar</button>
+    <ul id="listaTareas">
+        <!-- Las tareas se agregarán aquí -->
+    </ul>
+
+
+    <script>
+        const input = document.getElementById("tareaInput");
+        const Agregar = document.getElementById("agregarBtn");
+        const lista = document.getElementById("listaTareas");
+
+        Agregar.addEventListener("click", agregarTarea);
+        function agregarTarea() {
+            const texto = input.value;
+            const li = document.createElement("li");
+            li.textContent = texto;
+            const botonBorrar = document.createElement("button");
+            botonBorrar.textContent = "X";
+            botonBorrar.addEventListener("click", function borrar() {
+
+                li.remove();
+            });
+            li.appendChild(botonBorrar);
+            lista.appendChild(li);
+
+
+
+
+            input.value = "";
+        }
+
+
+    </script>
+</body>
+
+</html>
