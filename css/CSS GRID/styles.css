@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     box-sizing: border-box;
 }
@@ -28,4 +28,4 @@
 }
 .tall {
     grid-row: span 2; /* Este elemento ocupará dos filas */
-}   
+}  
