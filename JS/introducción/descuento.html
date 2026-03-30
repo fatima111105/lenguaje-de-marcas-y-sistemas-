@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >Precio:</label>
+    <input type="text" id="precio">
+    <label for="">descuento:</label>
+    <input type="text" id="descuento">
+    <button onclick="descuento()">Calcular </button>
+    <p id="resultado"></p>
+    <script>
+        
+        function descuento() {
+            const precio = document.getElementById("precio");
+            const descuento = document.getElementById("descuento");
+            const total =document.getElementById("resultado");
+            let precioarticulo=precio.value;
+            let descuentoarticulo=descuento.value;
+            let preciocondescuento=precioarticulo-(precioarticulo*descuentoarticulo/100);
+            resultado.textContent=preciocondescuento;
+        }
+    </script>
+</body>
+</html>

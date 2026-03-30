@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p id="texto">Hola mundo</p>
+    <button id="btn">Cambiar texto</button>
+    
+
+
+    <script>
+        let btn = document.getElementById("btn");//Obtenemos el elemento del botón por su ID
+        const textoCambiado = document.getElementById("texto");//Obtenemos el elemento del párrafo por su ID
+        btn.addEventListener("click", function() {//Agregamos un evento de clic al botón
+            textoCambiado.textContent = "Texto cambiado con JavaScript";//Cuando se hace clic en el botón, cambiamos el contenido del párrafo al nuevo texto
+        }
+    );
+
+
+
+
+    </script>
+</body>
+</html>

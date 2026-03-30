@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cuadrado{
+            background-color: rgb(166, 43, 43);
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+        }
+        p{
+            color: rgb(19, 19, 19);
+        }
+    </style>
+</head>
+<body>
+    <div id="cuadrado"></div>
+    <button onclick="cambiarcoloe()">Cambiar color</button>
+    <Div>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, totam consequatur aspernatur unde est corporis a corrupti ut sequi perspiciatis quibusdam recusandae architecto accusantium facilis ex commodi doloribus esse rem!</p>
+    </Div>
+    <script>
+        function cambiarcoloe(){
+            const cuadrado = document.getElementById("cuadrado");
+            cuadrado.style.backgroundColor = "blue";
+            cuadrado.style.width = "300px";
+            document.body.style.backgroundColor =  "rgb(0, 0, 0,0.8)";
+            cuadrado.style.display = "none";//para ocultar el cuadrado
+            const p = document.querySelector("p");
+            p.style.color="white";
+           
+        }
+    </script>
+
+
+</body>
+</html>

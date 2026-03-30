@@ -6,6 +6,14 @@ body {
     font-family: Arial, sans-serif;
     color: #343a40;
 }
+/* Estilos para el menú de navegación */
+nav button {
+    display: none;
+    margin: 0 15px ;
+    border: none;
+    text-decoration: black;
+    font-size: 30px;
+}
 nav {
     background-color: #f8f9fa;
     padding: 25px 10px;
@@ -24,30 +32,33 @@ nav ul {
     
 }
 /************************************************************************************************/
-/*me falta que los colores sean fijos para cada enlace*/
 nav ul li a{
     font-size: 1.2em;
     padding: 25px 10px;
     text-decoration: none;
     color: #343a40;
-    border: 3px solid transparent;
+    border-bottom: 3px solid;
+    
     
 }
-nav ul li a.nav-link-home:hover{
-    border-bottom-color: #007bff;
+nav ul li a:hover{
     font-weight: bold;
+    border-bottom-color:  #007bff;
+
 }
-nav ul li a.nav-link-about:hover{
-    border-bottom-color: #32cd32;
-    font-weight: bold;
+
+nav ul li a.nav-link-home{
+    border-bottom: 3px solid #007bff;
+    
 }
-nav ul li a.nav-link-services:hover{
-    border-bottom-color: #8a2be2;
-    font-weight: bold;
+nav ul li a.nav-link-about{
+    border-bottom: 3px solid #32cd32;
 }
-nav ul li a.nav-link-contact:hover{
-    border-bottom-color: #ffd747;
-    font-weight: bold;
+nav ul li a.nav-link-services{
+    border-bottom: 3px solid #8a2be2;
+}
+nav ul li a.nav-link-contact {
+    border-bottom: 3px solid #ffd747;
 }
 /************************************************************************************************/
 .cta-container {
@@ -63,7 +74,7 @@ nav ul li a.nav-link-contact:hover{
     max-width: 550px;
     font-size: 1.2em;
     font-weight: bold;
-    margin: 0 auto; 
+    margin: 0 auto; c
 }
 /************************************************************************************************/
 
@@ -88,21 +99,17 @@ nav ul li a.nav-link-contact:hover{
     align-items: center;     
 }
 
-
-
+/************************************************************************************************/
 .contact-container {
     background-color: #f8f9fa;
     text-align: center;
 }
-
-
 .contact-form {
     max-width: 500px;
     padding: 20px;
     margin: auto;
 }
-
-
+/************************************************************************************************/
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -112,7 +119,6 @@ nav ul li a.nav-link-contact:hover{
     margin-bottom: 20px;
     padding: 10px;
 }
-/************************************************************************************************/
 /* Hover general */
 .contact-form input:hover,
 .contact-form textarea:hover {
@@ -144,12 +150,7 @@ nav ul li a.nav-link-contact:hover{
 .contact-form button:hover {
     background-color: #343a40;
 }
-
-
-
-
-
-
+/************************************************************************************************/
 
 footer {
     background-color: #f1f3f5;
@@ -160,7 +161,7 @@ footer {
 
 footer small {
     font-weight: bold;
-}
+}   
 
 footer a {
     font-size: 2em;
@@ -168,3 +169,23 @@ footer a {
 }
 
 
+@media (max-width: 800px) {
+    /*Ocultar el menú de navegación en pantallas pequeñas */
+    nav ul {
+        display: none;
+    }
+    /* Mostrar el botón de menú en pantallas pequeñas */
+    nav button {
+        display: block;
+       
+    }
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-container div {
+        width: 100%;
+    }
+    
+   
+}
