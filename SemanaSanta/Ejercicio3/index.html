@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--se puede hacre con add y remove pero con toggle es mas facil-->
+    <p id="mensaje" style="display: block;">este mensaje se va a mostrara y eliminar mientras pulses el boton </p>
+    <button id="boton">quitar mensaje</button>
+
+
+
+
+
+    <script >
+        let boton =document.getElementById("boton");
+        let mensaje=document.getElementById("mensaje")
+        boton.addEventListener("click",cambio);
+        function cambio(){
+            if (mensaje.style.display==="block"){
+                mensaje.style.display="none";
+
+            }else{
+                mensaje.style.display="block";
+            }
+        }
+
+
+
+    </script>
+     <!--------<script src="script.js"></script> ------>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            #contenedor{
+                background-color: aqua;
+                height: 200px;
+                width: 200px;
+                margin: 20px 20px 20px 20px;
+            }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor">
+       <p>aqui es donde se va a cambiar el color del fondo</p> 
+    </div>
+    <button id="boton">cambiar</button>
+
+    <script>
+        let boton=document.getElementById("boton");
+        let caja=document.getElementById("contenedor");
+        boton.addEventListener("click",cambiarColor);
+        function cambiarColor(){
+            caja.style.backgroundColor="red"
+            caja.style.color="white"
+        }
+
+
+
+    </script>
+
+
+    <!--------<script src="script.js"></script> ------>
+</body>
+
+</html>
