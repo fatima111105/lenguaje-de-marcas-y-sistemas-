@@ -18,7 +18,13 @@
         let campo = document.getElementById("campo");
         let agregar = document.getElementById("agregar")
         let lista = document.getElementById("lista");
-        agregar.addEventListener("click", function () {
+        agregar.addEventListener("click", function (parar) {
+            if(campo.value===""){
+                
+                alert("este campo está vacío")
+                parra.preventDefault();
+            }
+
             let li = document.createElement("li");
             let tarea = document.createTextNode(campo.value);
             let x = document.createElement("button");
