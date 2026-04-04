@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lista de tareas</h1>
+    <input type="text" id="campo" placeholder="escribe aqui la tarea ">
+    <button id="agregar">Agregar</button>
+    <ul id="lista">
+
+    </ul>
+    <script>
+        let campo = document.getElementById("campo");
+        let agregar = document.getElementById("agregar")
+        let lista = document.getElementById("lista");
+        agregar.addEventListener("click", function () {
+            let li = document.createElement("li");
+            let tarea = document.createTextNode(campo.value);
+            let x = document.createElement("button");
+            let input=document.createElement("input");
+            input.type="checkbox";
+            x.textContent = "X"
+            lista.appendChild(li);
+            li.appendChild(tarea);
+            li.appendChild(x);
+            li.appendChild(input)
+            x.addEventListener("click", function () {
+                tarea.remove();
+                x.remove();
+                li.remove();
+
+            });
+            input.addEventListener("change",function(){
+                li.style.textDecoration="line-through";
+            })
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

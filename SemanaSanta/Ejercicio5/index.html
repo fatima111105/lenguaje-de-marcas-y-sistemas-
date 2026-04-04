@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lista de Elementos</h1>
+
+    <ul id="lista">
+        <li>Elemento 1 <button class="borrar">X</button></li>
+        <li>Elemento 2 <button class="borrar">X</button></li>
+        <li>Elemento 3 <button class="borrar">X</button></li>
+        <li>Elemento 4 <button class="borrar">X</button></li>
+        <li>Elemento 5 <button class="borrar">X</button></li>
+    </ul>
+
+
+
+
+
+    <script>
+        let botones = document.querySelectorAll(".borrar");
+        botones.forEach(function(boton){
+            boton.addEventListener("click",function(){
+                boton.parentElement.remove();
+            });
+            
+        });
+        //Otra forma de hacerlo con un bucle for
+        /*for (let i=0;i<boton.length;i++){
+           boton[i].addEventListener("click",function(){
+            boton[i].parentElement.remove();
+           });
+        }*/
+    </script>
+</body>
+
+</html>
