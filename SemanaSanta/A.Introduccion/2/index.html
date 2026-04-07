@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio Completo JS + CSS</title>
+  <style>
+    /* Clase predefinida que se puede alternar */
+    .miClase {
+      background-color: blue;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 20px;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Ejercicio combinado</h2>
+
+  <input type="text" id="inputTexto" placeholder="Escribe un texto">
+  <input type="text" id="inputColor" placeholder="Escribe un color (red, #f00, etc.)">
+  
+  <div id="miDiv">Texto inicial</div>
+  
+  <button id="btnCambiarTexto">Cambiar Texto</button>
+  <button id="btnCambiarColor">Cambiar Color</button>
+  <button id="btnAlternarClase">Alternar Clase</button>
+
+  <script>
+    const div = document.getElementById("miDiv");
+    const inputTexto = document.getElementById("inputTexto");
+    const inputColor = document.getElementById("inputColor");
+    const btnTexto = document.getElementById("btnCambiarTexto");
+    const btnColor = document.getElementById("btnCambiarColor");
+    const btnClase = document.getElementById("btnAlternarClase");
+
+    // Cambiar el texto
+    btnTexto.addEventListener("click", function() {
+      div.textContent = inputTexto.value;
+      inputTexto.value = ""; // limpiar input
+    });
+
+    // Cambiar el color
+    btnColor.addEventListener("click", function() {
+      div.style.color = inputColor.value;
+      inputColor.value = ""; // limpiar input
+    });
+
+    // Alternar clase CSS
+    btnClase.addEventListener("click", function() {
+      div.classList.toggle("miClase");
+    });
+  </script>
+
+</body>
+</html>

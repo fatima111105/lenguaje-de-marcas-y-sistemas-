@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paleta Completa de UI</title>
+<style>
+  :root {
+    /* Grupo Verde Natural */
+    --verde-mil: #58D68D;
+    --verde-lima: #82E0AA;
+    --verde-pistacho: #B8E986;
+
+    /* Grupo Azul-Armonía Verde */
+    --azul-marino: #154360;
+    --azul-cielo: #5DADE2;
+    --azul-petroleo: #006272;
+    --turquesa: #48C9B0;
+
+    /* Neutrales Suaves */
+    --blanco-roto: #FAF9F6;
+    --crema: #FFFDD0;
+    --gris-claro: #D3D3D3;
+
+    /* Acentos Brillantes */
+    --amarillo: #F4D03F;
+    --rojo-coral: #FF4040;
+
+    /* Pasteles / Baby */
+    --celeste-pastel: #B2EBF2;
+    --baby-rosa: #FFC0CB;
+    --lavanda-pastel: #E6E6FA;
+    --menta-pastel: #BFFCC6;
+    --melocoton-pastel: #FFDAB9;
+
+    /* Grupo Naranja / Cálido */
+    --naranja-pastel: #FFA07A;
+    --coral-suave: #FF7F50;
+    --amarillo-dorado: #F1C40F;
+    --durazno: #FFDAB9;
+
+    /* Grupo Morado / Violeta */
+    --lavanda: #E6E6FA;
+    --morado-suave: #9370DB;
+    --lila-pastel: #C8A2C8;
+    --violeta-oscuro: #5D3A7D;
+
+    /* Grupo Gris / Moderno */
+    --gris-medio: #A9A9A9;
+    --gris-oscuro: #696969;
+    --gris-azulado: #778899;
+    --gris-humo: #F5F5F5;
+
+    /* Grupo Verde / Bosque */
+    --verde-esmeralda: #50C878;
+    --verde-bosque: #228B22;
+    --verde-selva: #2E8B57;
+    --verde-oliva-oscuro: #556B2F;
+  }
+
+  body {
+    font-family: sans-serif;
+    background-color: var(--blanco-roto);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  h2 { margin-bottom: 10px; }
+
+  .group-title { text-align: center; font-size: 1.8em; margin-top: 40px; color: #333; }
+
+  .color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .color-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+
+  .color-box.light { color: black; }
+  .color-box:hover { transform: scale(1.1); }
+
+  /* Aplicar colores */
+  /* Verde Natural */
+  .verde-mil { background-color: var(--verde-mil); color: black; }
+  .verde-lima { background-color: var(--verde-lima); color: black; }
+  .verde-pistacho { background-color: var(--verde-pistacho); color: black; }
+
+  /* Azul Armonía Verde */
+  .azul-marino { background-color: var(--azul-marino); }
+  .azul-cielo { background-color: var(--azul-cielo); color: black; }
+  .azul-petroleo { background-color: var(--azul-petroleo); }
+  .turquesa { background-color: var(--turquesa); color: black; }
+
+  /* Neutrales Suaves */
+  .blanco-roto { background-color: var(--blanco-roto); color: black; }
+  .crema { background-color: var(--crema); color: black; }
+  .gris-claro { background-color: var(--gris-claro); color: black; }
+
+  /* Acentos Brillantes */
+  .amarillo { background-color: var(--amarillo); color: black; }
+  .rojo-coral { background-color: var(--rojo-coral); }
+
+  /* Pasteles / Baby */
+  .celeste-pastel { background-color: var(--celeste-pastel); color: black; }
+  .baby-rosa { background-color: var(--baby-rosa); color: black; }
+  .lavanda-pastel { background-color: var(--lavanda-pastel); color: black; }
+  .menta-pastel { background-color: var(--menta-pastel); color: black; }
+  .melocoton-pastel { background-color: var(--melocoton-pastel); color: black; }
+
+  /* Naranja / Cálido */
+  .naranja-pastel { background-color: var(--naranja-pastel); color: black; }
+  .coral-suave { background-color: var(--coral-suave); }
+  .amarillo-dorado { background-color: var(--amarillo-dorado); color: black; }
+  .durazno { background-color: var(--durazno); color: black; }
+
+  /* Morado / Violeta */
+  .lavanda { background-color: var(--lavanda); color: black; }
+  .morado-suave { background-color: var(--morado-suave); }
+  .lila-pastel { background-color: var(--lila-pastel); color: black; }
+  .violeta-oscuro { background-color: var(--violeta-oscuro); }
+
+  /* Gris / Moderno */
+  .gris-medio { background-color: var(--gris-medio); }
+  .gris-oscuro { background-color: var(--gris-oscuro); }
+  .gris-azulado { background-color: var(--gris-azulado); }
+  .gris-humo { background-color: var(--gris-humo); color: black; }
+
+  /* Verde / Bosque */
+  .verde-esmeralda { background-color: var(--verde-esmeralda); }
+  .verde-bosque { background-color: var(--verde-bosque); }
+  .verde-selva { background-color: var(--verde-selva); }
+  .verde-oliva-oscuro { background-color: var(--verde-oliva-oscuro); }
+</style>
+</head>
+<body>
+
+<h2 class="group-title">Grupo Verde Natural</h2>
+<div class="color-grid">
+  <div class="color-box verde-mil">Verde Menta</div>
+  <div class="color-box verde-lima">Verde Lima</div>
+  <div class="color-box verde-pistacho">Verde Pistacho</div>
+</div>
+
+<h2 class="group-title">Grupo Azul-Armonía Verde</h2>
+<div class="color-grid">
+  <div class="color-box azul-marino">Azul Marino</div>
+  <div class="color-box azul-cielo">Azul Cielo</div>
+  <div class="color-box azul-petroleo">Azul Petróleo</div>
+  <div class="color-box turquesa">Turquesa</div>
+</div>
+
+<h2 class="group-title">Neutrales Suaves</h2>
+<div class="color-grid">
+  <div class="color-box blanco-roto">Blanco Roto</div>
+  <div class="color-box crema">Crema</div>
+  <div class="color-box gris-claro">Gris Claro</div>
+</div>
+
+<h2 class="group-title">Acentos Brillantes</h2>
+<div class="color-grid">
+  <div class="color-box amarillo">Amarillo</div>
+  <div class="color-box rojo-coral">Rojo Coral</div>
+</div>
+
+<h2 class="group-title">Pasteles / Baby</h2>
+<div class="color-grid">
+  <div class="color-box celeste-pastel">Celeste Pastel</div>
+  <div class="color-box baby-rosa">Baby Rosa</div>
+  <div class="color-box lavanda-pastel">Lavanda Pastel</div>
+  <div class="color-box menta-pastel">Menta Pastel</div>
+  <div class="color-box melocoton-pastel">Melocotón Pastel</div>
+</div>
+
+<h2 class="group-title">Naranja / Cálido</h2>
+<div class="color-grid">
+  <div class="color-box naranja-pastel">Naranja Pastel</div>
+  <div class="color-box coral-suave">Coral Suave</div>
+  <div class="color-box amarillo-dorado">Amarillo Dorado</div>
+  <div class="color-box durazno">Durazno</div>
+</div>
+
+<h2 class="group-title">Morado / Violeta</h2>
+<div class="color-grid">
+  <div class="color-box lavanda">Lavanda</div>
+  <div class="color-box morado-suave">Morado Suave</div>
+  <div class="color-box lila-pastel">Lila Pastel</div>
+  <div class="color-box violeta-oscuro">Violeta Oscuro</div>
+</div>
+
+<h2 class="group-title">Gris / Moderno</h2>
+<div class="color-grid">
+  <div class="color-box gris-medio">Gris Medio</div>
+  <div class="color-box gris-oscuro">Gris Oscuro</div>
+  <div class="color-box gris-azulado">Gris Azulado</div>
+  <div class="color-box gris-humo">Gris Humo</div>
+</div>
+
+<h2 class="group-title">Verde / Bosque</h2>
+<div class="color-grid">
+  <div class="color-box verde-esmeralda">Verde Esmeralda</div>
+  <div class="color-box verde-bosque">Verde Bosque</div>
+  <div class="color-box verde-selva">Verde Selva</div>
+  <div class="color-box verde-oliva-oscuro">Verde Oliva Oscuro</div>
+</div>
+
+</body>
+</html>

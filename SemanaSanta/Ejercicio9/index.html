@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #texto {
+            background-color: antiquewhite;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="texto">aqui se vera el texto que vas a cambiar</p>
+    <input type="text" id="input" placeholder="Escribe algo...">
+    <button id="btn1">Cambiar el color</button>
+    <button id="btn2">Cambiar el texto</button>
+    <script>
+        //cambiar el texto y el color 
+        let input = document.getElementById("input");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let texto = document.getElementById("texto");
+        let contenido;
+        btn2.addEventListener("click", function () {
+            texto.textContent = input.value;
+        });
+        btn1.addEventListener("click", function () {
+            texto.style.color = input.value;
+
+        });
+
+    </script>
+</body>
+
+</html>
