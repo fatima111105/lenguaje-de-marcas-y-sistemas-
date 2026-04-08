@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        .tarea {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .color-naranja {
+            color: orange; /* clase que aplicaremos para cambiar el color */
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Tareas</h2>
+
+    <input type="text" id="nuevaTarea" placeholder="Escribe tu tarea">
+    <button id="agregar">Agregar</button>
+    <button id="cambiarColor">Cambiar color a naranja</button>
+
+    <ul id="listaTareas">
+        <!-- Aquí se agregarán las tareas -->
+    </ul>
+
+    <script>
+        let inputTarea = document.getElementById("nuevaTarea");
+        let btnAgregar = document.getElementById("agregar");
+        let btnColor = document.getElementById("cambiarColor");
+        let lista = document.getElementById("listaTareas");
+
+        // Función para agregar una tarea
+        btnAgregar.addEventListener("click", function() {
+            let texto = inputTarea.value.trim(); // quitar espacios
+            if(texto !== "") {
+                let li = document.createElement("li");
+                li.textContent = texto;      // asignar el texto de la tarea
+                li.classList.add("tarea");   // clase para estilo
+                lista.appendChild(li);       // agregar al ul
+                inputTarea.value = "";       // limpiar input
+            }
+        });
+
+        // Función para cambiar color a todas las tareas
+        btnColor.addEventListener("click", function() {
+            let tareas = document.querySelectorAll("#listaTareas li");
+            tareas.forEach(function(li) {
+                li.classList.add("color-naranja"); // aplicamos la clase CSS
+            });
+        });
+    </script>
+</body>
+</html>

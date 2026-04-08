@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar elementos dinámicamente</title>
+    <style>
+        #contenedor {
+            border: 2px solid #333;
+            padding: 20px;
+            width: 300px;
+            min-height: 100px;
+        }
+        img {
+            display: block;
+            margin-bottom: 10px;
+            width: 150px;
+            height: 150px;
+        }
+        a {
+            display: block;
+            margin-bottom: 10px;
+            color: blue;
+            text-decoration: underline;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Agregar elementos dinámicamente</h2>
+
+    <div id="contenedor">
+        <!-- Aquí se agregan imágenes y enlaces -->
+    </div>
+
+    <button id="agregarImg">Agregar Imagen</button>
+    <button id="agregarEnlace">Agregar Enlace</button>
+
+    <script>
+        let contenedor = document.getElementById('contenedor');
+        let btnImg = document.getElementById('agregarImg');
+        let btnEnlace = document.getElementById('agregarEnlace');
+
+        // Función para agregar imagen
+        btnImg.addEventListener('click', function() {
+            let img = document.createElement('img');
+            img.src = "https://via.placeholder.com/150"; // URL de imagen
+            img.alt = "Imagen dinámica";                 // texto alternativo
+            contenedor.appendChild(img);
+        });
+
+        // Función para agregar enlace
+        btnEnlace.addEventListener('click', function() {
+            let enlace = document.createElement('a');
+            enlace.href = "https://www.example.com";  // URL del enlace
+            enlace.textContent = "Ir a Example";      // texto visible
+            enlace.target = "_blank";                 // abrir en nueva pestaña
+            contenedor.appendChild(enlace);
+        });
+    </script>
+</body>
+</html>

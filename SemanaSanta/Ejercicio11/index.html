@@ -26,24 +26,27 @@
         let btn2 = document.getElementById("btn2");
         let btn3 = document.getElementById("btn3");
         let imagenes = document.getElementsByClassName("imagen");//Obtenemos las imagenes por su clase
-        btn1.addEventListener("click", function() {
-            for (let i = 0; i < imagenes.length; i++) {
-                imagenes[i].style.display = "none";//Ocultamos todas las imagenes
+        //debo de crear un evento para cada boton el cual le paso por parame el numero 
+        btn1.addEventListener("click", function () {
+            fboton(0);
+        })
+        btn2.addEventListener("click", function () {
+            fboton(1);
+        })
+        btn3.addEventListener("click", function () {
+            fboton(2);
+        })
+        function fboton(index) {
+            for(let i=0;i<imagenes.length;i++){
+                imagenes[i].style.display="none";
+
             }
-            imagenes[0].style.display = "block";//Mostramos la primera imagen
-        });
-        btn2.addEventListener("click", function() {
-            for (let i = 0; i < imagenes.length; i++) {
-                imagenes[i].style.display = "none";//Ocultamos todas las imagenes
-            }
-            imagenes[1].style.display = "block";//Mostramos la segunda imagen
-        });
-        btn3.addEventListener("click", function() {
-            for (let i = 0; i < imagenes.length; i++) {
-                imagenes[i].style.display = "none";//Ocultamos todas las imagenes
-            }
-            imagenes[2].style.display = "block";//Mostramos la tercera imagen
-        }); 
+
+
+            imagenes[index].style.display="block";
+
+        };
+
     </script>
 
 </body>

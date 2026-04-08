@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imagen {
+            display: none;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imagenes">
+        <img class="imagen" src="/SemanaSanta/img/flor1.jpg">
+        <img class="imagen" src="/SemanaSanta/img/flor4.jpg">
+        <img class="imagen" src="/SemanaSanta/img/flor5.jpg">
+    </div>
+
+
+
+    <script>
+
+        let carrusel = document.getElementsByClassName("imagen");
+        let fotoactual=0;
+        function mostrar() {
+            //con este for las oculto todas 
+            for (let i = 0; i < carrusel.length; i++) {
+                carrusel[i].style.display = "none";
+            }
+            //esto es para que ponga una foto
+            carrusel[fotoactual].style.display = "block";
+            
+              fotoactual++;
+            //esto es para reiniciar si intenta pasar la longitud de la lista  
+            
+            if (fotoactual >=carrusel.length) {
+                fotoactual = 0;
+            }
+
+          
+
+            setTimeout(mostrar, 2000);
+
+
+        }
+        mostrar()
+    </script>
+</body>
+
+</html>

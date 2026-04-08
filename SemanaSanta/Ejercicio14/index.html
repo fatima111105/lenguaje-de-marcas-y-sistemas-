@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="num">
+    <button id="boton">Comprobar</button>
+    <p id="mensaje"></p>
+
+    <script>
+        let num = document.getElementById("num");
+        let boton = document.getElementById("boton");
+        let mensaje = document.getElementById("mensaje");
+        let intentos = 0;
+        let numsecreto = Math.floor(Math.random() * 10);
+        boton.addEventListener("click", function () {
+            if (num.value ==numsecreto) {
+                intentos++;
+                mensaje.textContent = "¡Has acertado! Llevas " + intentos + " intentos";
+            } else if (num.value > numsecreto) {
+                intentos++;
+                mensaje.textContent = "El número insertado es mayor. Llevas " + intentos + " intentos";
+
+            } else if (num.value < numsecreto) {
+                intentos++;
+                mensaje.textContent = "El número insertado es menor. Llevas " + intentos + " intentos";
+            }
+
+
+            num.value="";
+
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

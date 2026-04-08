@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos classList</title>
+    <style>
+        .resaltado {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .oculto {
+            display: none;
+        }
+        .rojo {
+            color: red;
+        }
+        .grande {
+            font-size: 2em;
+        }
+        div {
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de classList</h1>
+
+    <!-- Ejemplo 1: add -->
+    <div id="ejemplo1">Este div se resaltará al agregar clase</div>
+    <button onclick="agregarClase()">Agregar clase resaltado</button>
+
+    <!-- Ejemplo 2: remove -->
+    <div id="ejemplo2" class="rojo">Este div pierde el color rojo al quitar clase</div>
+    <button onclick="quitarClase()">Quitar clase rojo</button>
+
+    <!-- Ejemplo 3: toggle -->
+    <div id="ejemplo3">Este div alterna visibilidad</div>
+    <button onclick="alternarClase()">Mostrar / Ocultar</button>
+
+    <!-- Ejemplo 4: contains -->
+    <div id="ejemplo4" class="grande">Este div verifica si tiene clase 'grande'</div>
+    <button onclick="verificarClase()">Verificar clase</button>
+
+    <script>
+        // Ejemplo 1: add
+        function agregarClase() {
+            let div = document.getElementById("ejemplo1");
+            div.classList.add("resaltado");
+        }
+
+        // Ejemplo 2: remove
+        function quitarClase() {
+            let div = document.getElementById("ejemplo2");
+            div.classList.remove("rojo");
+        }
+
+        // Ejemplo 3: toggle
+        function alternarClase() {
+            let div = document.getElementById("ejemplo3");
+            div.classList.toggle("oculto");
+        }
+
+        // Ejemplo 4: contains
+        function verificarClase() {
+            let div = document.getElementById("ejemplo4");
+            if(div.classList.contains("grande")) {
+                alert("¡El div tiene la clase 'grande'!");
+            } else {
+                alert("No tiene la clase 'grande'");
+            }
+        }
+    </script>
+</body>
+</html>
