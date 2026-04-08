@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="lista"></ul>
+
+    </ul>
+    <button id="agregar">Agregar</button>
+
+
+
+    <script>
+        let lista = document.getElementById("lista");
+        let boton = document.getElementById("agregar");
+        let contador = 0;
+        boton.addEventListener("click", function () {
+            let li = document.createElement("li");
+            contador++;
+            let comentario = document.createTextNode("Elemento " + contador);
+            lista.appendChild(li);
+            li.appendChild(comentario);
+            li.addEventListener("click", function () {
+                li.remove();
+                comentario.remove();
+            })
+
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+
+    <style>
+        .completada {
+           
+            color: rgb(61, 139, 65);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lista de tareas</h2>
+
+    <input type="text" id="tareaInput" placeholder="Nueva tarea">
+    <button id="agregarBtn">Agregar</button>
+    <ul id="listaTareas"></ul>
+
+    <script>
+        const input = document.getElementById("tareaInput");
+        const agregar = document.getElementById("agregarBtn");
+        const lista = document.getElementById("listaTareas");
+
+        agregar.addEventListener("click", agregarTarea);
+
+        function agregarTarea() {
+            const texto = input.value;
+
+            if (texto.trim() === "") {
+                alert("El campo está vacío");
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            //
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox<<<";
+
+            checkbox.addEventListener("change", function () {
+                li.classList.toggle("completada");
+            });
+
+            // 
+            const span = document.createElement("span");
+            span.textContent = texto;
+
+            // 
+            const botonBorrar = document.createElement("button");
+            botonBorrar.textContent = "X";
+            botonBorrar.addEventListener("click", function () {
+                li.remove();
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(botonBorrar);
+
+            lista.appendChild(li);
+
+            input.value = "";
+        }
+    </script>
+</body>
+
+</html>
