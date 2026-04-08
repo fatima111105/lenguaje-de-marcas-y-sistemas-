@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt, repellat, cumque perspiciatis vitae illo
+        corrupti doloribus quaerat culpa, praesentium unde excepturi similique fugiat corporis soluta in? Sequi, illo
+        nemo.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt, repellat, cumque perspiciatis vitae illo
+        corrupti doloribus quaerat culpa, praesentium unde excepturi similique fugiat corporis soluta in? Sequi, illo
+        nemo.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt, repellat, cumque perspiciatis vitae illo
+        corrupti doloribus quaerat culpa, praesentium unde excepturi similique fugiat corporis soluta in? Sequi, illo
+        nemo.</p>
+        <button onclick=abrirmodal(); id="btn-abrir-modal">Abrir modal</button>
+    <dialog id="modal">
+        <h2>Hola, soy un modal</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt, repellat, cumque perspiciatis vitae
+            illo
+            corrupti doloribus quaerat culpa, praesentium unde excepturi similique fugiat corporis soluta in? Sequi,
+            illo
+            nemo.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt, repellat, cumque perspiciatis vitae
+            illo
+            corrupti doloribus quaerat culpa, praesentium unde excepturi similique fugiat corporis soluta in? Sequi,
+            illo
+            nemo.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi incidunt, repellat, cumque perspiciatis vitae
+            illo
+            corrupti doloribus quaerat culpa, praesentium unde excepturi similique fugiat corporis soluta in? Sequi,
+            illo
+            nemo.</p>
+        <button onclick=cerrarmodal(); id="btn-cerrar-modal">Cerrar modal</button>
+    </dialog>
+</body>
+<script>
+     function abrirmodal() {
+        const modal = document.querySelector("#modal");
+        modal.showModal();
+    }
+    function cerrarmodal() {
+        const modal = document.querySelector("#modal");
+        modal.close();
+    }
+   
+
+</script>
+
+</html>

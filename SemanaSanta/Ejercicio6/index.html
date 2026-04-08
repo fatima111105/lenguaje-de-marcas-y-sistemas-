@@ -12,26 +12,32 @@
     <h2 id="contador">0</h2>
     <button id="sumar">+</button>
     <button id="restar">-</button>
+    <button id="reset">Reset</button>
 
 
 
 
 
     <script>
-        let contador=document.getElementById("contador");
-        let sumar=document.getElementById("sumar");
-        let restar=document.getElementById("restar");
-       
-        let valor=0;
+        let contador = document.getElementById("contador");
+        let sumar = document.getElementById("sumar");
+        let restar = document.getElementById("restar");
+        let reset = document.getElementById("reset");
 
-        sumar.addEventListener("click",function(){
+        let valor = 0;
+
+        sumar.addEventListener("click", function () {
             valor++;
-            contador.textContent=valor; 
+            contador.textContent = valor;
         });
-        restar.addEventListener("click",function(){
+        restar.addEventListener("click", function () {
             valor--;
-            contador.textContent=valor; 
+            contador.textContent = valor;
         });
+        reset.addEventListener("click", function () {
+                valor = 0;
+                contador.textContent = valor;
+            });
     </script>
 
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="numero">0</p>
+    <button id="sumar">+</button>
+    <button id="restar">-</button>
+    <button id="reset">reset</button>
+
+    <script>
+        let reset = document.getElementById("reset");
+        let sumar = document.getElementById("sumar");
+        let restar = document.getElementById("restar");
+        let numero = document.getElementById("numero");
+        numero.textContent = localStorage.getItem("contador");
+        //localStorage.setItem("contador",0);
+        let contador = localStorage.getItem("contador");
+        sumar.addEventListener("click", function () {
+            contador++;
+            localStorage.setItem("contador", contador);
+            numero.textContent = contador;
+        })
+        reset.addEventListener("click", function () {
+            contador = 0;
+            localStorage.setItem("contador", contador);
+            numero.textContent = contador;
+        })
+        restar.addEventListener("click", function () {
+            contador--;
+            localStorage.setItem("contador", contador);
+            numero.textContent = contador;
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="nombre" placeholder="Nombre">
+        <input type="text" name="" id="precio" placeholder="Precio">
+        <button id="btn">agregar</button>
+    </div>
+
+    <script>
+        let nombre = document.getElementById("nombre");
+        let precio = document.getElementById("precio");
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            let div = document.createElement("div")
+            let nombreUsuario = document.createElement("p");
+            nombreUsuario.textContent = "Nombre:" + nombre.value;
+            let precious = document.createElement("p");
+            precious.textContent = "Precio" + precio.value;
+            div.appendChild(nombreUsuario);
+            div.appendChild(precious);
+           
+           
+
+        });
+    </script>
+</body>
+
+</html>
