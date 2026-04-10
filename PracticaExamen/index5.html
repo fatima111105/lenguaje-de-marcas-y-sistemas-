@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="c">0</h2>
+    <button id="sumar">+</button>
+    <button id="restar">-</button>
+    <button id="reset">reset</button>
+    <script>
+        let contador = document.getElementById("c");
+        let sumar = document.getElementById("sumar");
+        let restar = document.getElementById("restar");
+        let reset = document.getElementById("reset")
+        let valor = 0;
+        sumar.addEventListener("click", function () {
+            valor++;
+            contador.textContent = valor;
+        })
+        restar.addEventListener("click", function () {
+            valor--;
+            contador.textContent = valor;
+        })
+        reset.addEventListener("click", function () {
+            valor = 0;
+            contador.textContent = valor;
+        })
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

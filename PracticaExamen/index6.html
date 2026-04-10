@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <input type="text" id="nombre">
+        <button id="btn">Enviar</button>
+    </form>
+    <script>
+        let input=document.getElementById("nombre");
+        let btn=document.getElementById("btn");
+        btn.addEventListener("click",function(evento){
+            if (input.value===""){
+                evento.preventDefault();
+                alert("el campo esat vacio")
+            }else{
+                 alert("el campo esta lleno ")
+            }
+        })
+    </script>
+
+</body>
+
+</html>

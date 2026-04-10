@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #contenedor {
+        .estilo {
             background-color: antiquewhite;
             height: 200px;
             width: 200px;
@@ -32,6 +32,7 @@
                 contenedor.style.display = "none";
             } else {
                 contenedor.style.display = "block";
+                contenedor.classList.add("estilo");
             }
         }
 

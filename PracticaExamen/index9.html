@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="imgenes">
+        <img class="imagen" src="/SemanaSanta/img/flor1.jpg" style="display: block;" fboton(0)>
+        <img class="imagen" src="/SemanaSanta/img/flor4.jpg" style="display: none;"fboton(1)>
+        <img class="imagen" src="/SemanaSanta/img/flor5.jpg" style="display: none;"fboton(2s)>
+
+    </div>
+    <div class="botones">
+        <button id="btn1">1</button>
+        <button id="btn2">2</button>
+        <button id="btn3">3</button>
+    </div>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let imagenes = document.getElementsByClassName("imagen");
+        btn1.addEventListener("click",function(){
+            fboton(0);
+        })
+         btn2.addEventListener("click",function(){
+            fboton(1);
+        })
+         btn3.addEventListener("click",function(){
+            fboton(2);
+        })
+        //me falto la palabra function 
+        //me falto que hay que poner la paabra imagenes no boton 
+        function fboton(index){
+            for(let i=0;i<imagenes.length;i++){
+                imagenes[i].style.display="none";
+            }
+            imagenes[index].style.display="block";
+        };
+        
+    </script>
+</body>
+</html>

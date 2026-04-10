@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Lista de Tareas</h2>
+
+    <input type="text" id="nuevaTarea" placeholder="Escribe tu tarea">
+    <button id="agregar">Agregar</button>
+    <button id="cambiarColor">Cambiar color a naranja</button>
+
+    <ul id="listaTareas">
+        <!-- Aquí se agregarán las tareas -->
+    </ul>
+
+
+
+
+    <script>
+        let inputTarea = document.getElementById("nuevaTarea");
+        let btnAgregar = document.getElementById("agregar");
+        let btnColor = document.getElementById("cambiarColor");
+        let lista = document.getElementById("listaTareas");
+
+        // Función para agregar una tarea
+        btnAgregar.addEventListener("click", function () {
+            let texto = inputTarea.value.trim(); // quitar espacios
+            if (texto !== "") {
+                let li = document.createElement("li");
+                li.textContent = texto;      // asignar el texto de la tarea
+                li.classList.add("tarea");   // clase para estilo
+                lista.appendChild(li);       // agregar al ul
+                inputTarea.value = "";       // limpiar input
+            }
+        });
+        btnColor.addEventListener("click",function(){
+            let listaTareas=document.querySelectorAll("#listaTareas")
+           for(let i=0;i<listaTareas.length;i++){
+               listaTareas[i].style.color="white"
+           }
+        });
+    </script>
+
+</body>
+
+</html>

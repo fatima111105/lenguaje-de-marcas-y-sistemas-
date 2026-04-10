@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="mensaje" style="display: block;">Este mensaje se puede ocultar</p>
+    <button id="toggle">Mostrar/Ocultar</button>
+    <script>
+        let mensaje=document.getElementById("mensaje")
+        let toggle=document.getElementById("toggle");
+        toggle.addEventListener("click",function(){
+            if(mensaje.style.display==="block"){
+                mensaje.style.display="none"
+            }else{
+                mensaje.style.display="block"
+            }
+        });
+
+    </script>
+</body>
+
+</html>

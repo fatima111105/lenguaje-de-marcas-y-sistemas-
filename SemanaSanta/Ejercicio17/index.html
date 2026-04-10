@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam inventore error temporibus maxime ad ipsa, labore quo? Nobis harum iste aliquid quas consectetur libero asperiores. Vero, illum. Eligendi, voluptas exercitationem.</p>
+    //aqui hay un btn para abriri 
+    <button id="abrir">Abrir ventana</button>
+    //al abrirdr se debe de ver esto 
+    <dialog id="modal">
+        <h3>Ventana modal</h3>
+        //bt n cerrar 
+        <button id="cerrar">Cerrar ventana</button>
+    </dialog>
+
+    <script>
+        //boton abriri cerrar ventana modal
+        let btnAbrir=document.getElementById("abrir");
+        //boton cerrar ventadn
+        let btnCerrar=document.getElementById("cerrar"); 
+        //ventana de silogoo    
+        let modal=document.getElementById("modal");
+        //funcion cunado se abre 
+        btnAbrir.addEventListener("click",function(){
+            //muestra la ventana nmodal el dialogo 
+            modal.showModal();
+        })  
+        btnCerrar.addEventListener("click",function(){
+            //otro btn para cerrar 
+            modal.close();
+        })
+
+        
+    </script>
+</body>
+</html>

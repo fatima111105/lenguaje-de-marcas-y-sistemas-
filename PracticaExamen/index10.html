@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="imagenes">
+        <img class="imagen" src="/SemanaSanta/img/flor1.jpg">
+        <img class="imagen" src="/SemanaSanta/img/flor4.jpg">
+        <img class="imagen" src="/SemanaSanta/img/flor5.jpg">
+    </div>
+    <script>
+        let imagen=document.getElementsByClassName("imagen")
+        let fotoActual=0;
+        function mostrar(){
+            //for para ocultar todo 
+            for(let i =0;i<imagen.length;i++){
+                imagen[i].style.display="none";
+            }
+            //variable foto actual con 0 dentro del block
+            imagen[fotoActual].style.display="block";
+            fotoActual++;
+            //hay que poner si superra el tamaño un if ...=0
+           if (fotoActual>=imagen.length){
+            fotoActual=0;
+           }
+           ///aqui hay que poner la funcion mostrar 
+            setTimeout(mostrar,2000);
+           
+        }
+         mostrar();
+    </script>
+</body>
+
+</html>

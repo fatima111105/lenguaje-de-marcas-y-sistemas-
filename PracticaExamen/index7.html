@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tatchado{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lista de tareas </h2>
+    <ul id="lista">
+
+    </ul>
+    <input type="text" id="input">
+    <button id="btn">agregar</button>
+    <script>
+        let btn = document.getElementById("btn");
+        let tarea = document.getElementById("input");
+        let lista = document.getElementById("lista");
+        btn.addEventListener("click", function () {
+          let li=document.createElement("li");
+          lista.appendChild(li);
+          let btn1=document.createElement("button");
+          li.textContent=tarea.value;
+          li.appendChild(btn1);
+          btn1.textContent="x"
+           tarea.value="";
+           let btn2=document.createElement("input")
+           btn2.type="checkbox";
+
+           li.appendChild(btn2);
+           btn2.addEventListener("click",function(){
+            li.style.textDecoration="line-through"
+           })
+           btn1.addEventListener("click",function(){
+            li.remove();
+            btn1.remove();
+            btn2.remove();
+
+           })
+        })
+    </script>
+</body>
+
+</html>

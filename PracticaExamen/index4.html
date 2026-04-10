@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Elemento 1 <button class="borrar">X</button></li>
+        <li>Elemento 2 <button class="borrar">X</button></li>
+    </ul>
+    <script>
+        let btn = document.querySelectorAll(".borrar");
+        let lista = document.getElementById("lista");
+        btn.forEach(function (boton) {
+            boton.addEventListener("click", function () {
+                boton.parentElement.remove();
+            })
+        })
+
+        /*for(let i=0;i<btn.length;i++){
+            btn[i].addEventListener("click",function(){
+                btn[i].parentElement.remove();
+            })
+        }*/
+
+
+    </script>
+
+
+
+</body>
+
+</html>
