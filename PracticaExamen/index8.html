@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        <!-- estado inicial del css-->
+        
         #contenedor {
         display:
         none;
         }
-    <!-- estado cuando actua  del css-->
+  
     #contenedor.clase{
     display: block;
     }
@@ -27,7 +27,6 @@
         let btn = document.getElementById("boton");
         let contenedor = document.getElementById("contenedor")
         btn.addEventListener("click", function () {
-            //alternativa 1 con clas list se le añade la clase css al contenedor
             contenedor.classList.toggle("clase");
         }
 
