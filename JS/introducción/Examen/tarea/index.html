@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #taskContainer {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tachar {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="taskContainer">
+        <h1>Lista de tareas</h1>
+
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Inserta una nueva tarea">
+            <button id="addTaskBtn">Agregar tarea</button>
+        </div>
+
+        <ul id="taskList">
+            <li>Tarea 1</li>
+            <li>Tarea 2</li>
+            <li>Tarea 3</li>
+        </ul>
+    </div>
+    <script>
+        let btn = document.getElementById("addTaskBtn");
+        let tarea = document.getElementById("taskInput");
+        let lista = document.getElementById("taskList");
+
+        btn.addEventListener("click", function () {
+            if (tarea.value === "") {
+                alert("El input est vacio ")
+
+            } else {
+                let lii = document.createElement("li");
+
+                let btn2 = document.createElement("input");
+                btn2.type = "checkbox";
+
+                let btn1 = document.createElement("button");
+                btn1.textContent = "x";
+                // en vez de usar text content creo una variable  texto la cual sear todo el valor de el input que yo escriba y epongo document . create text node (tarea.value)
+                let texto = document.createTextNode(tarea.value);
+                lista.appendChild(lii);
+                lii.appendChild(btn2);   // checkbox primero
+                lii.appendChild(btn1);   // botón después
+                lii.appendChild(texto);  // texto al final
+
+
+                btn2.addEventListener("click", function () {
+                    lii.classList.add("tachar")
+                });
+                //si quisiera borrar solo el elemento pues lo mismo en vez de btn
+                tarea.value = ""
+                btn1.addEventListener("click", borrar)
+                function borrar() {
+                    lii.remove();
+
+
+                }
+
+            }
+
+
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

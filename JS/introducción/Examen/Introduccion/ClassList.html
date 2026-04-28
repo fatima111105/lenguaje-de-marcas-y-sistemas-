@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>classList demo</title>
+    <style>
+        .rojo {
+            background: red;
+            color: white;
+        }
+
+        .azul {
+            background: blue;
+            color: white;
+        }
+
+        .grande {
+            font-size: 30px;
+        }
+
+        .activo {
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="caja" class="rojo grande">Hola</div>
+
+    <button onclick="addClase()">add</button>
+    <button onclick="removeClase()">remove</button>
+    <button onclick="toggleClase()">toggle</button>
+    <button onclick="containsClase()">contains</button>
+    <button onclick="replaceClase()">replace</button>
+
+    <script>
+        function addClase() {
+            const caja = document.getElementById("caja");
+            caja.classList.add("activo");
+        }
+        function removeClase() {
+            const caja = document.getElementById("caja");
+            caja.classList.remove("rojo");
+        }
+        function toggleClase() {
+            const caja = document.getElementById("caja");
+            caja.classList.toggle("activo");
+        }
+        function containsClase() {
+            const caja = document.getElementById("caja");
+
+            if (caja.classList.contains("grande")) {
+                alert("Tiene la clase grande");
+            } else {
+                alert("NO tiene la clase grande");
+            }
+        }
+        function replaceClase() {
+            const caja = document.getElementById("caja");
+            caja.classList.replace("rojo", "azul");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Juego</title>
+
+    <style>
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #win {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            flex-direction: column;
+            align-items: center;
+            margin: 122px;
+            text-align: center;
+        }
+
+        #win h3,
+        p {
+            padding: 10px;
+        }
+
+        #logo {
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            object-fit: cover;
+        }
+
+        .btnClose {
+            margin-top: 1rem;
+            outline: 0;
+            background-color: rgb(168, 14, 14);
+            border: 0;
+            border-radius: 2px;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            font-weight: 900;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btnClose:hover {
+            opacity: 0.75;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="game">
+            <h3>Adivina el número entre 0 - 10</h3>
+
+            <input type="number" id="data" class="data" placeholder="Ingresa un número" />
+
+            <button id="validate">Validar</button>
+
+            <h4 class="warning" id="warning">El juego ha comenzado</h4>
+            <h4 id="pts-label">0</h4>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div id="win">
+            <img src="https://cdn-icons-png.flaticon.com/512/744/744922.png" id="logo" alt="trophy" />
+            <h3>FELICIDADES HAS GANADO</h3>
+            <p id="pts"></p>
+
+            <a id="btn-close" class="btnClose">Cerrar</a>
+        </div>
+    </div>
+
+    <script>
+        //primera parte del juego del juego
+        let yo = document.getElementById("data");
+        let pts = document.getElementById("pts-label");
+        let btnenviar = document.getElementById("validate");
+        let numeroSecreto = Math.floor(Math.random() * 11);
+
+        let comentario = document.getElementById("warning");
+        let contador = 0;
+        pts.textContent = contador;
+        btnenviar.addEventListener("click", comprobar);
+        //cuando poner value si es algo que meto yo si se pone si es algo que va desde una variable como un contador no hce falta 
+        function comprobar() {
+            if (yo.value == "") {
+                alert("Por favor ingresa un numero");
+
+            } else {
+
+                if (yo.value == numeroSecreto) {
+                    //tengo que probar si se puede hace r con show modal y close modal 
+                    comentario.textContent = "El numero es corrcto";
+                    pts.textContent = contador;
+                    //segunda parte la de mostrar modal
+                    let win = document.getElementById("modal");
+                    win.style.display = "block";
+                    //el btnclose no lo he cambiato a button es a y funciona igual que button 
+                    let btnClose = document.getElementById("btn-close");
+                    btnClose.addEventListener("click", function () {
+                        win.style.display = "none";
+                    });
+
+                } else if (yo.value > numeroSecreto) {
+                    contador++;
+                    comentario.textContent = "El numero secreto es menor";
+                    pts.textContent = contador;
+
+                } else if (yo.value < numeroSecreto) {
+                    contador++;
+                    comentario.textContent = "El numero secreto es mayor";
+                    pts.textContent = contador;
+                }
+                yo.value = "";
+            }
+        };
+    </script>
+
+</body>
+
+</html>

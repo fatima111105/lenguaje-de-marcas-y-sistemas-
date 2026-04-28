@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal moderno</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 200vh; /* solo para ver el efecto de bloqueo */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* Estilo del modal */
+    dialog {
+      border: none;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Fondo oscuro */
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .acciones {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .cancelar {
+      background: #ccc;
+      color: black;
+      margin-right: 10px;
+    }
+
+    .aceptar {
+      background: #2196F3;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="abrir">Abrir modal</button>
+
+  <dialog id="modal">
+    <h3>Confirmación</h3>
+    <p>¿Seguro que quieres continuar?</p>
+
+    <div class="acciones">
+      <button class="cancelar" id="cerrar">Cancelar</button>
+      <button class="aceptar">Aceptar</button>
+    </div>
+  </dialog>
+
+  <script>
+    //se usa cuando hay un dialog modal ya que muestra eso y bloquea todas las funciones 
+    const modal = document.getElementById("modal");
+    const abrir = document.getElementById("abrir");
+    const cerrar = document.getElementById("cerrar");
+
+    abrir.addEventListener("click",function ()  {
+      modal.showModal();
+    });
+
+    cerrar.addEventListener("click",function ()  {
+      modal.close();
+    });
+  </script>
+
+</body>
+</html>

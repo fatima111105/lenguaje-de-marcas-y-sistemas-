@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estado inicial del div */
+       .myDIV{
+        background-color:none;
+       }
+
+        /* Estilo que se aplicará al hacer clic */
+        .mystyle {
+            background-color: coral;
+            height: 100px;
+            width: 200px;
+            margin: 100px;
+            color: beige;
+        }
+
+        /* Estilo del botón */
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+    <button id="btn">Try it</button>
+
+    <!-- Capa / DIV -->
+    <div id="myDIV" class="myDIV">
+        This is a DIV element.
+    </div>
+
+
+    <script>
+        let btn =document.getElementById("btn");
+        let div=document.getElementById("myDIV");
+        // para alternar que hay un estilo css clase y otro es con el clas list toggle
+        btn.addEventListener("click",function(){
+            div.classList.toggle("mystyle");
+        });
+
+    </script>
+
+</body>
+
+</html>

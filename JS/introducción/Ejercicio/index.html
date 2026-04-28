@@ -44,10 +44,13 @@
 </body>
 <script>
      function abrirmodal() {
+        // Seleccionamos el elemento dialog y lo mostramos
         const modal = document.querySelector("#modal");
         modal.showModal();
     }
     function cerrarmodal() {
+        // Seleccionamos el elemento dialog y lo cerramos
+        // la quuerySelector es un método que nos permite seleccionar un elemento del DOM utilizando un selector CSS. En este caso, seleccionamos el elemento con el id "modal" utilizando el selector "#modal".
         const modal = document.querySelector("#modal");
         modal.close();
     }

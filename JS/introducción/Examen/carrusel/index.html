@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrusel de imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .carousel {
+            margin: 30px auto;
+            width: 500px;
+        }
+
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Automatic Slideshow</h1>
+    <p>Cambia cada 2 segundos</p>
+
+    <div class="carousel">
+        <img class="imagen" src="https://picsum.photos/id/1015/600/300" alt="Imagen 1">
+        <img class="imagen" src="https://picsum.photos/id/1016/600/300" alt="Imagen 2">
+        <img class="imagen" src="https://picsum.photos/id/1018/600/300" alt="Imagen 3">
+        <img class="imagen"  src="https://picsum.photos/id/1024/600/300" alt="Imagen 4">
+        <img class="imagen" src="https://picsum.photos/id/1035/600/300" alt="Imagen 5">
+    </div>
+    <script>
+        //aqui tengo que coger las imagenes por su clase ya que se van a repetir y son como una lista array
+        let imagen=document.getElementsByClassName("imagen");
+        //contador para que sepamos por qu efoto vamos
+        let fotoActual=0;
+        //funcion 
+        function automatico(){
+            //primero las oculto todas  con el display none 
+            for (let i = 0; i < imagen.length; i++) {
+                //aqui est y es img[i]para saver que image
+                imagen[i].style.display="none";  
+            }
+            //la foto actual =0 al principio la que se muestra 
+            imagen[fotoActual].style.display="block";
+            //aqui se va a aumentar para motrara la siguente 
+            fotoActual++;
+            //si el contador aumenta al array o se iguala pues se del¡vuelve a 0 para que se repita varas veces 
+            if (fotoActual>=imagen.length){
+                fotoActual=0;
+            }
+            //setTime(la funcion sin parenténtesis y el tiempo)
+            setTimeout(automatico,2000);
+
+        };
+        //para que se ejecute la funcion al cargar la pagina
+        automatico();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

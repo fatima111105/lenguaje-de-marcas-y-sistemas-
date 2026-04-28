@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Tarjetas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input,
+    textarea {
+      width: 250px;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .card {
+      margin-top: 20px;
+      padding: 15px;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      background: #f9f9f9;
+    }
+
+    .card h3 {
+      margin: 0 0 5px 0;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Formulario para crear una tarjeta</h2>
+
+  <form id="formulario">
+    <label>Nombre:
+      <input type="text" id="nombre">
+    </label>
+
+    <label>Profesión:
+      <input type="text" id="profesion">
+    </label>
+
+    <label>Descripción:
+      <textarea id="descripcion"></textarea>
+    </label>
+
+    <button id="submit">Crear Tarjeta</button>
+    <p id="error" class="error"></p>
+  </form>
+
+  <div id="contenedorTarjetas"></div>
+
+  <script>
+    let nombre = document.getElementById("nombre");
+    let profesión = document.getElementById("profesion");
+    let descripcion = document.getElementById("descripcion");
+    let btn = document.getElementById("submit");
+    let contenedorTarjetas = document.getElementById("contenedorTarjetas");
+    contenedorTarjetas.classList.add("card");
+   contenedorTarjetas.style.display = "none";
+    btn.addEventListener("click", function (e) {
+      //evito que se cargue la pagina de nuevo asi se verá la tarjeta creada 
+        e.preventDefault();
+      if (nombre.value === "" || profesión.value === "" || descripcion.value === "") {
+        alert("No es posible crear la tarjeta con los campos vacios");
+      } else {
+        
+        if (contenedorTarjetas.style.display === "none") {
+          contenedorTarjetas.style.display = "block";
+        }
+        let nombreCon = document.createElement("h2");
+        let profesiónCon = document.createElement("h2");
+        let descripcionCon = document.createElement("h2");
+        let divv = document.createElement("div");
+        contenedorTarjetas.appendChild(divv);
+        divv.appendChild(nombreCon);
+        divv.appendChild(profesiónCon);
+        divv.appendChild(descripcionCon);
+        nombreCon.textContent = nombre.value;
+        profesiónCon.textContent = profesión.value;
+        descripcionCon.textContent = descripcion.value;
+        
+
+        nombre.value="";
+        profesión.value="";
+        descripcion.value="";
+
+      }
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
